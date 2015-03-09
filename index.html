@@ -1,0 +1,55 @@
+<html>
+<head>
+<title> Tap Tap Revenge </title>
+
+<script type="text/javascript" src="script/soundmanager2.js"></script>
+<script type="text/javascript" src="script/loadsoundchrome.js"></script>
+
+    <script src="script/processing-1.4.1.js"></script>
+    <script type="text/processing" data-processing-target="mycanvas">
+
+    /*@pjs globalKeyEvents = "true"; */
+    
+PImage startScreen;
+PImage startButton;
+
+void setup()
+{
+
+    size(400,500);
+    frameRate( 30 );
+    
+	startScreen = loadImage("Images/Start Screen.jpg");
+	startButton = loadImage("Images/Start_Button.png");
+
+}
+
+
+void draw()
+{
+    image(startScreen,0,0);
+    
+    if(mouseX > 160 && mouseX < 235 && mouseY > 380 && mouseY < 453)
+    {
+        image(startButton,165,384);
+    }
+    
+    if(mousePressed == true && mouseButton == LEFT)
+    {
+        if(mouseX > 160 && mouseX < 235 && mouseY > 380 && mouseY < 453)
+        {
+            link("Song Page.html");
+        }
+    }
+}
+
+
+</script>
+<canvas id="mycanvas"></canvas>
+
+</head>
+
+<body>
+
+</body>
+</html>
